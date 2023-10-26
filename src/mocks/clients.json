@@ -1,0 +1,32 @@
+{
+    "data":[
+        {
+            "codigoCliente": "20203650729",
+            "tipoDocumento": "RUC",
+            "numeroDocumento": "12345678",
+            "codigoVendedor": "20203650729",
+            "razonSocial": "JYC Repuestos S.A.C",
+            "direccion" : "Av. Los Constructores 123",
+            "telefono1": "123456789",
+            "telefono2": "987654321",
+            "celular": "987654321",
+            "correo": "jywrepuestos@gmail.com",
+            "estado": "ACTIVO"
+        },
+        {
+            "codigoCliente": "10728858970",
+            "tipoDocumento": "DNI",
+            "numeroDocumento": "72885897",
+            "codigoVendedor": "10728858970",
+            "razonSocial": "Jhaner S.A.C",
+            "direccion" : "Av. Manuel Villaran",
+            "telefono1": "4942421",
+            "telefono2": null,
+            "celular": "989697686",
+            "correo": "jhonnatan@jhaner.com"
+        }
+    ],
+    "code": {
+        "description": 200
+    }
+}
