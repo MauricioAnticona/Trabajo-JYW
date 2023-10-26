@@ -13,7 +13,7 @@ function Client() {
 
 	useEffect(() => {
 		const fetchClient = async () => {
-			const response = await getClient('10728858970');
+			const response = await getClient('20203650729');
 			setCliente(response);
 		};
 		fetchClient();
@@ -59,19 +59,19 @@ function Client() {
 						<strong>RUC</strong> {client?.codigoVendedor}
 					</p>
 					<p className="col-span-1">
-						<strong>TELÉFONO</strong> 014735966
+						<strong>TELÉFONO</strong> {client?.telefono1 || client?.telefono2}
 					</p>
 					<p className="col-span-2">
-						<strong>DIRECCIÓN FISCAL</strong> Av. Nicolas Arriola 1435, La victoria Lima, Perú
+						<strong>DIRECCIÓN FISCAL</strong> {client?.direccion}
 					</p>
 					<p className="col-span-1">
-						<strong>WHATSAPP</strong> 981163121
+						<strong>WHATSAPP</strong> {client?.celular}
 					</p>
 					<p className="col-span-1">
-						<strong>EMAIL</strong> jacostalorena@gmail.com
+						<strong>EMAIL</strong> {client?.correo}
 					</p>
 					<p className="col-span-1">
-						<strong>AGENCIA</strong> Shalon
+						<strong>AGENCIA</strong> {client?.agencia}
 					</p>
 					<p className="col-span-1">
 						<strong>OBSERVACIONES</strong> Ninguna

@@ -11,6 +11,7 @@
             "telefono2": "987654321",
             "celular": "987654321",
             "correo": "jywrepuestos@gmail.com",
+            "agencia": "shalon",
             "estado": "ACTIVO"
         },
         {
@@ -23,7 +24,9 @@
             "telefono1": "4942421",
             "telefono2": null,
             "celular": "989697686",
-            "correo": "jhonnatan@jhaner.com"
+            "correo": "jhonnatan@jhaner.com",
+            "agencia": "olva",
+            "estado": "INACTIVO"
         }
     ],
     "code": {
