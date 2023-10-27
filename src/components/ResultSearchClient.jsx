@@ -11,7 +11,7 @@ function ResultSearchClient(props){
     }
 
     return(
-        <div className="flex flex-row items-center gap-4 p-4">
+        <div className="flex flex-row items-center gap-4 p-4" >
 				<div className="grid grid-cols-3 grid-rows-3 gap-x-4 gap-y-1 grow">
 					<p className="col-span-1">
 						<strong>RAZÓN SOCIAL</strong> {client.razonSocial}

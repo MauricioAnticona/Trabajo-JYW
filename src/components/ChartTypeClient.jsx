@@ -2,7 +2,7 @@ import { BarChart, ResponsiveContainer, CartesianGrid, XAxis, Tooltip, Legend, Y
 
 function ChartTypeClient(props) {
 	return (
-		<ResponsiveContainer width="100%" height={300}>
+		<ResponsiveContainer width="100%" aspect={2}>
 			<BarChart
 				data={props.data}
 				width={500}
@@ -14,7 +14,7 @@ function ChartTypeClient(props) {
 					bottom: 5,
 				}}>
 				<CartesianGrid strokeDasharray="3 3" />
-				<XAxis dataKey="mes" className='text-xs' angle={35}/>
+				<XAxis dataKey="mes"  angle={-15}/>
 				<YAxis />
 				<Tooltip />
 				<Legend />
