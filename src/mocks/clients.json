@@ -15,6 +15,20 @@
             "estado": "ACTIVO"
         },
         {
+            "codigoCliente": "10744656060",
+            "tipoDocumento": "DNI",
+            "numeroDocumento": "74465606",
+            "codigoVendedor": "10744656060",
+            "razonSocial": "LUCY GAMES S.A.C",
+            "direccion" : "Av. 1ER DE MAYO",
+            "telefono1": "4942421",
+            "telefono2": null,
+            "celular": "993686313",
+            "correo": "mauricio@tryhard.com",
+            "agencia": "rappi",
+            "estado": "INACTIVO"
+        },
+        {
             "codigoCliente": "10728858970",
             "tipoDocumento": "DNI",
             "numeroDocumento": "72885897",
