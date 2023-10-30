@@ -56,9 +56,9 @@ function Client() {
 
     // temporal
     const dataMontoxMes = [
-        { mes: "enero", monto: 2000 },
-        { mes: "febrero", monto: 2500 },
-        { mes: "marzo", monto: 1000 },
+        { mes: "Enero", monto: 2000 },
+        { mes: "Febrero", monto: 2500 },
+        { mes: "Marzo", monto: 1000 },
         { mes: "Abril", monto: 1700 },
         { mes: "Mayo", monto: 1030 },
         { mes: "Junio", monto: 500 },
