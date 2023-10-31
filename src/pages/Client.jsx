@@ -99,7 +99,7 @@ function Client() {
 
     return (
         <main>
-            <div className="flex flex-row items-center gap-4 p-4 bg-blue-800 text-white">
+            <div className="flex flex-row items-center gap-4 p-4 bg-[#0C3764] text-white">
                 <button
                     onClick={() => handleTabs(0)}
                     className="text-3xl font-medium"
@@ -115,7 +115,7 @@ function Client() {
                     />
                     <button
                         onClick={handleSearchClient}
-                        className=" h-8 w-8 flex items-center justify-center rounded-md bg-yellow-400"
+                        className=" h-8 w-8 flex items-center justify-center rounded-md bg-[#FFA800]"
                     >
                         <FaSearch />
                     </button>
@@ -133,7 +133,7 @@ function Client() {
                             onClick={() => handleTabsClient(0)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabClient[0]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >
@@ -144,7 +144,7 @@ function Client() {
                             onClick={() => handleTabsClient(1)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabClient[1]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >
@@ -155,7 +155,7 @@ function Client() {
                             onClick={() => handleTabsClient(2)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabClient[2]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >
@@ -165,7 +165,7 @@ function Client() {
                             onClick={() => handleTabsClient(3)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabClient[3]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >
@@ -217,7 +217,7 @@ function Client() {
                 </div>
             </div>
 
-            <div className="flex flex-row items-center gap-4 p-4 bg-blue-800 text-white">
+            <div className="flex flex-row items-center gap-4 p-4 bg-[#0C3764] text-white">
                 <button
                     onClick={() => handleTabs(1)}
                     className="text-3xl font-medium"
@@ -247,9 +247,19 @@ function Client() {
                             placeholder="DFG"
                             className="py-1 px-2 rounded-md focus:outline-none text-black "
                         />
-                        <button className=" h-8 w-8 flex items-center justify-center rounded-md bg-yellow-400">
+                        <button className=" h-8 w-8 flex items-center justify-center rounded-md bg-[#FFA800]">
                             <FaSearch />
                         </button>
+                    </div>
+                </div>
+                <div className="flex justify-end items-center gap-2">
+                    <p> TOTAL: </p>
+                    <div className="flex gap-2" onClick={() => handleTabs(1)}>
+                        <input
+                            type="text"
+                            placeholder="$45000.00"
+                            className="py-1 px-2 rounded-md focus:outline-none text-black "
+                        />
                     </div>
                 </div>
             </div>
@@ -265,7 +275,7 @@ function Client() {
                             onClick={() => handleTabsItem(0)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabItem[0]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >
@@ -275,7 +285,7 @@ function Client() {
                             onClick={() => handleTabsItem(1)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabItem[1]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >
@@ -285,7 +295,7 @@ function Client() {
                             onClick={() => handleTabsItem(2)}
                             className={`px-6 py-1 text-xl rounded-md ${
                                 isActiveTabItem[2]
-                                    ? "bg-blue-800 text-white"
+                                    ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
                         >

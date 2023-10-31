@@ -38,7 +38,7 @@ function ResultSearchClient(props){
 						<strong>OBSERVACIONES</strong> Ninguno
 					</p>
 				</div>
-				<button className="px-6 py-1 text-lg rounded-md bg-red-600 text-white">VALID</button>
+				<button className="px-6 py-1 text-lg rounded-md bg-[#F5130D] text-white">VALID</button>
 			</div>
     );
 }

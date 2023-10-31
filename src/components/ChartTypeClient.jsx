@@ -12,7 +12,7 @@ import {
 
 function ChartTypeClient(props) {
     return (
-        <ResponsiveContainer width="100%" aspect={2}>
+        <ResponsiveContainer width="95%" aspect={2}>
             <BarChart
                 data={props.data}
                 width={500}
@@ -35,7 +35,7 @@ function ChartTypeClient(props) {
                 <YAxis />
                 <Tooltip />
                 <Legend verticalAlign="top" height={36}/>
-                <Bar dataKey="monto" fill="#8884d8" />
+                <Bar dataKey="monto" fill="#0C3764" />
             </BarChart>
 			
         </ResponsiveContainer>
