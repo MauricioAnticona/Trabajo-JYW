@@ -4,6 +4,10 @@ import ChartTypeClient from "../components/ChartTypeClient";
 import ResultSearchClient from "../components/ResultSearchClient";
 import DataTypeClient from "../components/DataTypeClient";
 import { FaSearch } from "react-icons/fa";
+import { Calendar } from 'primereact/calendar';
+
+
+
 
 // COMPONENTE DE REACT
 function Client() {
@@ -96,7 +100,8 @@ function Client() {
         { fecha: "01/2/2023", monto: 1000, factura: "0345678" },
         { fecha: "06/1/2023", monto: 500, factura: "0456778" },
     ];
-
+   
+    const [dates, setDates] = useState(null);
     return (
         <main>
             <div className="flex flex-row items-center gap-4 p-4 bg-[#0C3764] text-white">
@@ -181,8 +186,8 @@ function Client() {
                                     : "hidden"
                             }`}
                         >
-                            <div id="graficas" className="w-1/2">
-                                <div id="filtros">Filtros</div>
+                            <div id="graficas" className=" w-1/2">
+                                <div id="filtros" > <Calendar className="border-black border-2" value={dates} onChange={(e) => setDates(e.value)} selectionMode="range" showIcon /></div>
                                 <ChartTypeClient data={dataMontoxMes} />
                             </div>
                             <div id="historial" className="w-1/2">
