@@ -6,9 +6,6 @@ import DataTypeClient from "../components/DataTypeClient";
 import { FaSearch } from "react-icons/fa";
 import { Calendar } from 'primereact/calendar';
 
-
-
-
 // COMPONENTE DE REACT
 function Client() {
     const [isActiveTabs, setActiveTabs] = useState([true, false]);
@@ -21,6 +18,40 @@ function Client() {
     const [isActiveTabItem, setActiveTabsItem] = useState([true, false, false]);
     const [client, setClient] = useState(null);
     const searchClient = useRef(null);
+    const [dates, setDates] = useState(null);
+
+    const dataMontoxMes = [
+        { id:1, mes: "Enero", monto: 2000 },
+        { id:2, mes: "Febrero", monto: 2500 },
+        { id:3, mes: "Marzo", monto: 1000 },
+        { id:4, mes: "Abril", monto: 1700 },
+        { id:5, mes: "Mayo", monto: 1030 },
+        { id:6, mes: "Junio", monto: 500 },
+        { id:7, mes: "Julio", monto: 1800 },
+        { id:8, mes: "Agosto", monto: 2100 },
+        { id:9, mes: "Septiembre", monto: 2030 },
+        { id:10, mes: "Octubre", monto: 1200 },
+        { id:11, mes: "Noviembre", monto: 1520 },
+        { id:12,  mes: "Diciembre", monto: 2040 },
+    ];
+
+    const [dataMes, setDataMes] = useState(dataMontoxMes);
+
+    // temporal
+    const dataHistorial = [
+        { fecha: "12/12/2023", monto: 500, factura: "0123456" },
+        { fecha: "12/11/2023", monto: 600, factura: "0897565" },
+        { fecha: "13/10/2023", monto: 700, factura: "0896532" },
+        { fecha: "12/9/2023", monto: 1000, factura: "0934567" },
+        { fecha: "11/8/2023", monto: 1500, factura: "097T647" },
+        { fecha: "10/7/2023", monto: 2000, factura: "0975623" },
+        { fecha: "08/6/2023", monto: 800, factura: "0454562" },
+        { fecha: "06/5/2023", monto: 700, factura: "0123456" },
+        { fecha: "05/4/2023", monto: 1200, factura: "0456737" },
+        { fecha: "03/3/2023", monto: 700, factura: "0789562" },
+        { fecha: "01/2/2023", monto: 1000, factura: "0345678" },
+        { fecha: "06/1/2023", monto: 500, factura: "0456778" },
+    ];
 
     // Primer renderizado del componente
     useEffect(() => {
@@ -30,6 +61,21 @@ function Client() {
         };
         fetchClient();
     }, []);
+
+    useEffect(() => {
+        if (!dates ) return;
+        if (dates.length !== 2) return;
+
+        const initDate = new Date(dates[0]);
+        const endDate = new Date(dates[1]);
+        const newData = dataMontoxMes.filter((item) => { 
+            const date = item.id;
+            return date >= initDate.getMonth()+1 && date <= endDate.getMonth()+1;
+        });
+
+        setDataMes(newData);
+
+    }, [dates]);
 
     // Guardar el valor del input de busqueda
     function saveSearchClient(e) {
@@ -70,38 +116,9 @@ function Client() {
     }
 
     // temporal
-    const dataMontoxMes = [
-        { mes: "Enero", monto: 2000 },
-        { mes: "Febrero", monto: 2500 },
-        { mes: "Marzo", monto: 1000 },
-        { mes: "Abril", monto: 1700 },
-        { mes: "Mayo", monto: 1030 },
-        { mes: "Junio", monto: 500 },
-        { mes: "Julio", monto: 1800 },
-        { mes: "Agosto", monto: 2100 },
-        { mes: "Septiembre", monto: 2030 },
-        { mes: "Octubre", monto: 1200 },
-        { mes: "Noviembre", monto: 1520 },
-        { mes: "Diciembre", monto: 2040 },
-    ];
 
-    // temporal
-    const dataHistorial = [
-        { fecha: "12/12/2023", monto: 500, factura: "0123456" },
-        { fecha: "12/11/2023", monto: 600, factura: "0897565" },
-        { fecha: "13/10/2023", monto: 700, factura: "0896532" },
-        { fecha: "12/9/2023", monto: 1000, factura: "0934567" },
-        { fecha: "11/8/2023", monto: 1500, factura: "097T647" },
-        { fecha: "10/7/2023", monto: 2000, factura: "0975623" },
-        { fecha: "08/6/2023", monto: 800, factura: "0454562" },
-        { fecha: "06/5/2023", monto: 700, factura: "0123456" },
-        { fecha: "05/4/2023", monto: 1200, factura: "0456737" },
-        { fecha: "03/3/2023", monto: 700, factura: "0789562" },
-        { fecha: "01/2/2023", monto: 1000, factura: "0345678" },
-        { fecha: "06/1/2023", monto: 500, factura: "0456778" },
-    ];
    
-    const [dates, setDates] = useState(null);
+    
     return (
         <main>
             <div className="flex flex-row items-center gap-4 p-4 bg-[#0C3764] text-white">
@@ -187,8 +204,8 @@ function Client() {
                             }`}
                         >
                             <div id="graficas" className=" w-1/2">
-                                <div id="filtros" > <Calendar className="border-black border-2" value={dates} onChange={(e) => setDates(e.value)} selectionMode="range" showIcon /></div>
-                                <ChartTypeClient data={dataMontoxMes} />
+                                <div id="filtros" > <Calendar className="border-black border-2" value={dates} onChange={(e) => setDates(e.value)} selectionMode="range" showIcon readOnlyInput view="month" dateFormat="mm/yy"/></div>
+                                <ChartTypeClient data={dataMes} />
                             </div>
                             <div id="historial" className="w-1/2">
                                 <DataTypeClient data={dataHistorial} />
