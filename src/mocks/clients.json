@@ -1,49 +1,41 @@
-{
-    "data":[
-        {
-            "codigoCliente": "20203650729",
-            "tipoDocumento": "RUC",
-            "numeroDocumento": "12345678",
-            "codigoVendedor": "20203650729",
-            "razonSocial": "JYC Repuestos S.A.C",
-            "direccion" : "Av. Los Constructores 123",
-            "telefono1": "123456789",
-            "telefono2": "987654321",
-            "celular": "987654321",
-            "correo": "jywrepuestos@gmail.com",
-            "agencia": "shalon",
-            "estado": "ACTIVO"
-        },
-        {
-            "codigoCliente": "10744656060",
-            "tipoDocumento": "DNI",
-            "numeroDocumento": "74465606",
-            "codigoVendedor": "10744656060",
-            "razonSocial": "LUCY GAMES S.A.C",
-            "direccion" : "Av. 1ER DE MAYO",
-            "telefono1": "4942421",
-            "telefono2": null,
-            "celular": "993686313",
-            "correo": "mauricio@tryhard.com",
-            "agencia": "rappi",
-            "estado": "INACTIVO"
-        },
-        {
-            "codigoCliente": "10728858970",
-            "tipoDocumento": "DNI",
-            "numeroDocumento": "72885897",
-            "codigoVendedor": "10728858970",
-            "razonSocial": "Jhaner S.A.C",
-            "direccion" : "Av. Manuel Villaran",
-            "telefono1": "4942421",
-            "telefono2": null,
-            "celular": "989697686",
-            "correo": "jhonnatan@jhaner.com",
-            "agencia": "olva",
-            "estado": "INACTIVO"
-        }
-    ],
-    "code": {
-        "description": 200
+[
+    {
+        "codigoCliente": "0001005024",
+        "tipoDocumento": "RUC",
+        "numDocumento": "20203650729    ",
+        "codigoVendedor": "0   ",
+        "razonSocial": "JYW REPUESTOS SAC",
+        "direccion": "AV. NICOLAS ARRIOLA 1435 URB APOLO LA VICTORIA",
+        "telefono1": "4738822        ",
+        "telefono2": null,
+        "celular": null,
+        "correo": "comprobantes@jywrepuestos.com",
+        "estado": "ACT"
+    },
+    {
+        "codigoCliente": "0001008084",
+        "tipoDocumento": "RUC",
+        "numDocumento": "20203650729    ",
+        "codigoVendedor": "1   ",
+        "razonSocial": "JYW REPUESTOS SAC",
+        "direccion": "AV. NICOLAS ARRIOLA 1435 LA VICTORIA",
+        "telefono1": null,
+        "telefono2": null,
+        "celular": null,
+        "correo": "comprobantes@jywrepuestos.com",
+        "estado": "ACT"
+    },
+    {
+        "codigoCliente": "0001009933",
+        "tipoDocumento": "RUC",
+        "numDocumento": "20203650729    ",
+        "codigoVendedor": "1   ",
+        "razonSocial": "J.Y.W. REPUESTOS SAC",
+        "direccion": "AV. NICOLAS ARRIOLA # 1435   LA VICTORIA",
+        "telefono1": "3238752        ",
+        "telefono2": "4738822        ",
+        "celular": "3236677        ",
+        "correo": "comprobantes@jywrepuestos.com",
+        "estado": "ACT"
     }
-}
+]
