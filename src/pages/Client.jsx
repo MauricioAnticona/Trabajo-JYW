@@ -18,7 +18,9 @@ function Client() {
         false,
     ]);
     const [isActiveTabItem, setActiveTabsItem] = useState([true, false, false]);
-    const [client, setClient] = useState(null);
+    const [ids, setIDs] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectClient, setSelectClient] = useState(null); // Guarda el cliente seleccionado
     const searchClient = useRef(null);
     const [dates, setDates] = useState(null);
 
@@ -107,25 +109,26 @@ function Client() {
             return;
         }
         const fetchClient = async () => {
-            const response = await getClient(searchClient.current);
-
-            setClient(response);
+            const response = await getClient(searchClient.current); // [id1, id2, ...]
+            setIDs(response);
+            setModalOpen(true);
         };
+
+
 
         fetchClient();
     }
+
+    const handleClose = () => setModalOpen(false);
+
+    const handleSelect = (e, client) => {
+        e.preventDefault();
+        setSelectClient(client);
+        setModalOpen(false);
+        console.log(client);
+    }
+
 //--con fe -//
-function listadoRegistro(){
-    
-
-}
-
-
-
-
-
-
-
 
 //--con fe -//
 
@@ -177,19 +180,28 @@ function listadoRegistro(){
                         <FaSearch />
                     </button>
                     
-                    
-                    <Modal.Body>
-                    <p>Modal body text goes here.</p>
-                    </Modal.Body>
-
-
-
+                    <Modal show={modalOpen} onHide={handleClose} >
+                        <Modal.Header closeButton>
+                            <Modal.Title>Clientes registrados</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            {
+                                ids !== null && ids.map((item, index) => (
+                                    <button key={index} className="flex flex-row gap-4" onClick={(e) => handleSelect(e, item) }>
+                                        <p> {item.codigoCliente} </p>
+                                        <p> {item.numDocumento} </p>
+                                        {/* llenar con datos necesarios */}
+                                    </button>
+                                ))
+                            }
+                        </Modal.Body>
+                    </Modal>
 
                 </div>
             </div>
             {/* Seccion Cliente */}
             <div className={`${isActiveTabs[0] ? "flex flex-col" : "hidden"}`}>
-                {client && <ResultSearchClient client={client} />}
+                {selectClient && <ResultSearchClient client={selectClient} />}
                 <div id="tabs" className="flex flex-col gap-4 p-4">
                     <div
                         id="button-group"
