@@ -5,7 +5,9 @@ import ResultSearchClient from "../components/ResultSearchClient";
 import DataTypeClient from "../components/DataTypeClient";
 import { FaSearch } from "react-icons/fa";
 import { Calendar } from "primereact/calendar";
-
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+//import ClientPopup from "../components/ClientPopup"; // Importa el nuevo componente
 // COMPONENTE DE REACT
 function Client() {
     const [isActiveTabs, setActiveTabs] = useState([true, false]);
@@ -19,7 +21,7 @@ function Client() {
     const [client, setClient] = useState(null);
     const searchClient = useRef(null);
     const [dates, setDates] = useState(null);
-    
+
     const dataMontoxMes = [
         { id: 1, mes: "Enero", monto: 2000 },
         { id: 2, mes: "Febrero", monto: 2500 },
@@ -52,6 +54,20 @@ function Client() {
         { fecha: "01/2/2023", monto: 1000, factura: "0345678" },
         { fecha: "06/1/2023", monto: 500, factura: "0456778" },
     ];
+
+    
+    //  const [showPopup, setShowPopup] = useState(false);
+    // Función para mostrar el popup
+    // const handleShowPopup = async () => {
+    // const response = await getClient(searchClient.current);
+    // setClient(response);
+    // setShowPopup(true);
+    // };
+
+    //************************************ */
+    //para comentar ctrl + K+C
+    //para descomentar ctrl + K+U
+    //************************************ */
 
     // Primer renderizado del componente
     // useEffect(() => {
@@ -86,18 +102,33 @@ function Client() {
 
     // Busqueda de cliente al hacer click al boton
     function handleSearchClient() {
-        if (!searchClient ) {
+        if (!searchClient) {
             alert("Ingrese un ID valido");
             return;
         }
         const fetchClient = async () => {
             const response = await getClient(searchClient.current);
-            
+
             setClient(response);
         };
-        
+
         fetchClient();
     }
+//--con fe -//
+function listadoRegistro(){
+    
+
+}
+
+
+
+
+
+
+
+
+//--con fe -//
+
 
     function handleTabs(index) {
         let newActive = [false, false];
@@ -137,12 +168,23 @@ function Client() {
                         placeholder="Escribe el id del cliente"
                         className="py-1 px-2 rounded-md focus:outline-none text-black"
                     />
+
+                    
                     <button
                         onClick={handleSearchClient}
                         className=" h-8 w-8 flex items-center justify-center rounded-md bg-[#FFA800]"
                     >
                         <FaSearch />
                     </button>
+                    
+                    
+                    <Modal.Body>
+                    <p>Modal body text goes here.</p>
+                    </Modal.Body>
+
+
+
+
                 </div>
             </div>
             {/* Seccion Cliente */}
@@ -366,6 +408,13 @@ function Client() {
                     </div>
                 </div>
             </div>
+
+            {/* <div>
+        <button onClick={handleShowPopup}>Mostrar Popup</button>
+    {showPopup && ( <ClientPopup data={client} onSelect={handleSelect} />
+    )}
+    
+    </div> */}
         </main>
     );
 }

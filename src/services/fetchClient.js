@@ -10,6 +10,7 @@ export async function getClient(id){
   const data = await response.json();
   console.log (data);
    // return data.find(client => client.codigoCliente === id);
-  return data[data.length-1];
+ // return data[data.length-1];
   //return data.find(client => client.munDocumento === id);
+  return data.find(client => client.razonSocial === id);
 }
