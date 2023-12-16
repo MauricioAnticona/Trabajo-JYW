@@ -3,8 +3,9 @@ import { getClient } from "../services/fetchClient";
 import ChartTypeClient from "../components/ChartTypeClient";
 import ResultSearchClient from "../components/ResultSearchClient";
 import DataTypeClient from "../components/DataTypeClient";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaWindowClose } from "react-icons/fa";
 import { Calendar } from "primereact/calendar";
+import CloseButton from 'react-bootstrap/CloseButton'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 //import ClientPopup from "../components/ClientPopup"; // Importa el nuevo componente
@@ -18,9 +19,11 @@ function Client() {
         false,
     ]);
     const [isActiveTabItem, setActiveTabsItem] = useState([true, false, false]);
+
     const [ids, setIDs] = useState([]);
     const [modalOpen, setModalOpen] = useState(false);
     const [selectClient, setSelectClient] = useState(null); // Guarda el cliente seleccionado
+    
     const searchClient = useRef(null);
     const [dates, setDates] = useState(null);
 
@@ -180,20 +183,40 @@ function Client() {
                         <FaSearch />
                     </button>
                     
-                    <Modal show={modalOpen} onHide={handleClose} >
-                        <Modal.Header closeButton>
-                            <Modal.Title>Clientes registrados</Modal.Title>
+                    <Modal 
+                    size="xl"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    show={modalOpen} 
+                    onHide={handleClose} 
+                    
+                    >
+                        <Modal.Header closeButton className=" bg-[#0C3764]" >
+                            
+                            <Modal.Title className="uppercase  text-white">Clientes registrados</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>
-                            {
-                                ids !== null && ids.map((item, index) => (
-                                    <button key={index} className="flex flex-row gap-4" onClick={(e) => handleSelect(e, item) }>
-                                        <p> {item.codigoCliente} </p>
-                                        <p> {item.numDocumento} </p>
-                                        {/* llenar con datos necesarios */}
-                                    </button>
-                                ))
-                            }
+                        <Modal.Body >
+                        <table >
+                        <tbody>
+                        
+                        <tr>
+                            <td className="uppercase text-s font-medium ">Tipo de documento</td>
+                            <td className="uppercase  text-s pl-4  font-medium ">número de DOCUMENTO</td>
+                            <td className="uppercase text-s pl-4 font-medium ">razón social</td>
+                            <td className="uppercase text-s pl-4 font-medium">dirección</td>                        
+                        </tr>
+
+                        {ids !== null && ids.map((item, index) => (
+                        <tr key={index}  onClick={(e) => handleSelect(e, item) }>
+                            <td className="border-[#0C3764] border-1"> {item.tipoDocumento} </td>                                    
+                            <td className="pl-5 border-[#0C3764] border-1"> {item.numDocumento} </td>
+                            <td  className="pl-5 border-[#0C3764] border-1" > {item.razonSocial} </td>
+                            <td  className="pl-5 border-[#0C3764] border-1" > {item.direccion} </td>
+                            {/* llenar con datos necesarios */}
+                        </tr>
+                            ))}
+
+                        </tbody>
+                        </table>
                         </Modal.Body>
                     </Modal>
 
@@ -214,7 +237,7 @@ function Client() {
                                     ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
-                        >
+                            >
                             TIPO A
                         </button>
 
@@ -225,7 +248,7 @@ function Client() {
                                     ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
-                        >
+                            >
                             ULTIMAS COMPRAS
                         </button>
 
@@ -236,9 +259,10 @@ function Client() {
                                     ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
-                        >
+                            >
                             ITEM MAS COMPRADOS
                         </button>
+
                         <button
                             onClick={() => handleTabsClient(3)}
                             className={`px-6 py-1 text-xl rounded-md ${
@@ -246,7 +270,7 @@ function Client() {
                                     ? "bg-[#0C3764] text-white"
                                     : "bg-gray-200 text-black"
                             }`}
-                        >
+                            >
                             CREDITOS Y COBRANZAS
                         </button>
                     </div>
@@ -258,7 +282,7 @@ function Client() {
                                     ? "flex flex-row"
                                     : "hidden"
                             }`}
-                        >
+                            >
                             <div id="graficas" className=" w-1/2">
                                 <div id="filtros">
                                     {" "}
@@ -266,7 +290,7 @@ function Client() {
                                         className="border-black border-2"
                                         value={dates}
                                         onChange={(e) => setDates(e.value)}
-                                        view="year"
+                                        view="month"
                                         dateFormat="yy"
                                         selectionMode="range"
                                         showIcon
@@ -275,16 +299,18 @@ function Client() {
                                 </div>
                                 <ChartTypeClient data={dataMes} />
                             </div>
+
                             <div id="historial" className="w-1/2">
                                 <DataTypeClient data={dataHistorial} />
                             </div>
+                            
                         </div>
                         <div
                             id="content-1"
                             className={`${
                                 isActiveTabClient[1] ? "flex" : "hidden"
                             }`}
-                        >
+                            >
                             Texto 2
                         </div>
                         <div
@@ -292,7 +318,7 @@ function Client() {
                             className={`${
                                 isActiveTabClient[2] ? "flex" : "hidden"
                             }`}
-                        >
+                            >
                             Texto 3
                         </div>
                         <div
@@ -300,7 +326,7 @@ function Client() {
                             className={`${
                                 isActiveTabClient[3] ? "flex" : "hidden"
                             }`}
-                        >
+                            >
                             Texto 4
                         </div>
                     </div>

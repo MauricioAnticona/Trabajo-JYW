@@ -2,7 +2,7 @@ function ResultSearchClient(props){
 
     const client = {
         razonSocial: props.client.razonSocial || ' - ',
-        codigoVendedor: props.client.codigoVendedor || ' - ',
+        numDocumento: props.client.numDocumento || ' - ',
         telefono: props.client.telefono1 || props.client.telefono2 || ' - ',
         direccion: props.client.direccion || ' - ',
         celular: props.client.celular || ' - ',
@@ -17,7 +17,7 @@ function ResultSearchClient(props){
 						<strong>RAZÓN SOCIAL</strong> {client.razonSocial}
 					</p>
 					<p className="col-span-1">
-						<strong>RUC</strong> {client.codigoVendedor}
+						<strong>RUC</strong> {client.numDocumento}
 					</p>
 					<p className="col-span-1">
 						<strong>TELÉFONO</strong> {client.telefono}
@@ -38,7 +38,7 @@ function ResultSearchClient(props){
 						<strong>OBSERVACIONES</strong> Ninguno
 					</p>
 				</div>
-				<button className="px-6 py-1 text-lg rounded-md bg-[#F5130D] text-white">VALID</button>
+				<button className="px-6 py-1 text-lg rounded-md bg-[#F5130D] text-white">VALIDAR</button>
 			</div>
     );
 }
