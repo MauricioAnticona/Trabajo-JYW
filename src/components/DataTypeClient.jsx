@@ -16,8 +16,11 @@ function DataTypeClient(props) {
 						<td>{item.factura}</td>
 					</tr>
 				))}
+				
 			</tbody>
+			
 		</table>
+		
 	);
 }
 

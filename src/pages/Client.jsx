@@ -302,7 +302,13 @@ function Client() {
 
                             <div id="historial" className="w-1/2">
                                 <DataTypeClient data={dataHistorial} />
+                                <tr>
+					<tr>TICKET PROMEDIO:</tr>
+					<tr>CANTIDAD ITEMS X TICKET: </tr>
+					<tr>FRENCUENCIA DE COMPRA</tr>
+				</tr>
                             </div>
+                            
                             
                         </div>
                         <div
