@@ -2,7 +2,8 @@ function DataTypeClient(props) {
 	const data = props.data;
 
 	return (
-		<table className="w-[500px]">
+		<div>
+					<table className="w-[500px]">
 			<tbody>
 				<tr>
 					<th>Fecha</th>
@@ -20,7 +21,12 @@ function DataTypeClient(props) {
 			</tbody>
 			
 		</table>
-		
+		<div>
+		<tr>TICKET PROMEDIO:</tr>
+		<tr>CANTIDAD ITEMS X TICKET: </tr>
+		<tr>FRENCUENCIA DE COMPRA</tr>
+	</div>
+		</div>
 	);
 }
 

@@ -207,7 +207,7 @@ function Client() {
 
                         {ids !== null && ids.map((item, index) => (
                         <tr key={index}  onClick={(e) => handleSelect(e, item) }>
-                            <td className="border-[#0C3764] border-1"> {item.tipoDocumento} </td>                                    
+                            <td className="pl-8 border-[#0C3764] border-1"> {item.tipoDocumento} </td>                                    
                             <td className="pl-5 border-[#0C3764] border-1"> {item.numDocumento} </td>
                             <td  className="pl-5 border-[#0C3764] border-1" > {item.razonSocial} </td>
                             <td  className="pl-5 border-[#0C3764] border-1" > {item.direccion} </td>
@@ -302,11 +302,7 @@ function Client() {
 
                             <div id="historial" className="w-1/2">
                                 <DataTypeClient data={dataHistorial} />
-                                <tr>
-					<tr>TICKET PROMEDIO:</tr>
-					<tr>CANTIDAD ITEMS X TICKET: </tr>
-					<tr>FRENCUENCIA DE COMPRA</tr>
-				</tr>
+                                
                             </div>
                             
                             
