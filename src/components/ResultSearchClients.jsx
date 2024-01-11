@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
+import Table from 'react-bootstrap/Table';
 
 export default function ResultSearchClients({
 	values: ids,
@@ -7,33 +8,37 @@ export default function ResultSearchClients({
 	onClick: handleSelect,
 	onHide: handleClose,
 }) {
-  
 	return (
 		<Modal size="xl" aria-labelledby="contained-modal-title-vcenter" show={modalOpen} onHide={handleClose}>
 			<Modal.Header closeButton className=" bg-[#0C3764]">
 				<Modal.Title className="uppercase  text-white">Clientes registrados</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
-				<table>
-					<tbody>
-						<tr>
-							<td className="uppercase text-s font-medium ">Tipo de documento</td>
-							<td className="uppercase  text-s pl-4  font-medium ">número de DOCUMENTO</td>
-							<td className="uppercase text-s pl-4 font-medium ">razón social</td>
-							<td className="uppercase text-s pl-4 font-medium">dirección</td>
+				<div className="max-h-[70vh] overflow-y-auto relative">
+        <Table striped bordered hover >
+					<thead>
+						<tr className='sticky top-[-0.05px]'>
+							<th>Tipo</th>
+							<th>Nº Documento</th>
+							<th>Razón Social</th>
+							<th>Dirección</th>
 						</tr>
-						{ids !== null &&
-							ids.map((item, index) => (
-								<tr key={index} onClick={(e) => handleSelect(e, item)}>
-									<td className="pl-8 border-[#0C3764] border-1"> {item.tipoDocumento} </td>
-									<td className="pl-5 border-[#0C3764] border-1"> {item.numDocumento} </td>
-									<td className="pl-5 border-[#0C3764] border-1"> {item.razonSocial} </td>
-									<td className="pl-5 border-[#0C3764] border-1"> {item.direccion} </td>
-									{/* llenar con datos necesarios */}
-								</tr>
-							))}
+					</thead>
+					<tbody>
+						{
+              ids !== null &&
+              ids.map((item, index) => (
+                <tr key={index} onClick={(e) => handleSelect(e, item)} className='text-sm hover:cursor-pointer'>
+                  <td>{item.tipoDocumento}</td>
+                  <td>{item.numDocumento}</td>
+                  <td>{item.razonSocial}</td>
+                  <td>{item.direccion}</td>
+                </tr>
+              ))
+            }
 					</tbody>
-				</table>
+				</Table>
+        </div>
 			</Modal.Body>
 		</Modal>
 	);
