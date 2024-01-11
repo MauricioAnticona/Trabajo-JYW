@@ -62,7 +62,7 @@ function Client() {
 		});
 
 		setDataMes(newData);
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dates]);
 
 	function handleTabs(index) {
@@ -87,7 +87,7 @@ function Client() {
 
 	return (
 		<main>
-      <Header values={ids} input={searchClient} saveIds={setIDs} tab={handleTabs} clickedClient={setSelectClient} />
+			<Header values={ids} input={searchClient} saveIds={setIDs} tab={handleTabs} clickedClient={setSelectClient} />
 			{/* Seccion Cliente */}
 			<div className={`${isActiveTabs[0] ? 'flex flex-col' : 'hidden'}`}>
 				{selectClient && <ResultSearchClient client={selectClient} />}
