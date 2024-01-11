@@ -145,7 +145,7 @@ function Client() {
 							</div>
 
 							<div id="historial" className="w-1/2">
-								<DataTypeClient data={dataHistorial} />
+								<DataTypeClient data={dataHistorial} numDocumento={selectClient.numDocumento}/>
 							</div>
 						</div>
 						<div id="content-1" className={`${isActiveTabClient[1] ? 'flex' : 'hidden'}`}>

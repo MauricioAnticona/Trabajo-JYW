@@ -1,5 +1,22 @@
-function DataTypeClient(props) {
-	const data = props.data;
+import React, {useState, useEffect } from 'react';
+import { getDataClient } from '../services/fetchClient';
+
+function DataTypeClient({data, numDocumento}) {
+  
+  const [averageBuys, setAverageBuys] = useState(0);
+  const [averageItems, setAverageItems] = useState(0);
+  const [averageFrequency, setAverageFrequency] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const {aBuys, aItems, aFrequency} = await getDataClient(numDocumento);
+      setAverageBuys(aBuys);
+      setAverageItems(aItems);
+      setAverageFrequency(aFrequency);
+    };
+
+    fetchData();
+  }, [numDocumento]);
 
 	return (
 		<div>
@@ -19,12 +36,11 @@ function DataTypeClient(props) {
 				))}
 				
 			</tbody>
-			
 		</table>
 		<div>
-		<tr>TICKET PROMEDIO:</tr>
-		<tr>CANTIDAD ITEMS X TICKET: </tr>
-		<tr>FRENCUENCIA DE COMPRA</tr>
+		<div>TICKET PROMEDIO: {averageBuys}</div>
+		<div>CANTIDAD ITEMS X TICKET: {averageItems}</div>
+		<div>FRENCUENCIA DE COMPRA: {averageFrequency}</div>
 	</div>
 		</div>
 	);
