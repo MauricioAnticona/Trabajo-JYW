@@ -9,7 +9,7 @@ function DataTypeClient({data, numDocumento}) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const {aBuys, aItems, aFrequency} = await getDataClient(numDocumento);
+      const [aBuys, aItems, aFrequency] = await getDataClient(numDocumento);
       setAverageBuys(aBuys);
       setAverageItems(aItems);
       setAverageFrequency(aFrequency);
